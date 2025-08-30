@@ -9,7 +9,7 @@ spec:
   source:
     repoURL: https://github.com/sokpanharithdev/argo-cd.git
     targetRevision: dev
-    path: /kubernate/dev
+    path: kubernate/dev
   destination:
     server: https://kubernetes.default.svc
     namespace: herman
