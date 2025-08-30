@@ -1,0 +1,23 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: herman-application
+  namespace: argocd
+spec:
+  project: default
+
+  source:
+    repoURL: https://github.com/sokpanharithdev/argo-cd.git
+    targetRevision: dev
+    path: /kubernate/dev
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: herman
+
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
+
+    automated:
+      selfHeal: true
+      prune: true
