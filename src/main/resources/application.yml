@@ -4,3 +4,14 @@ server:
 spring:
   application:
     name: cd
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+
+minio:
+  url: http://localhost:9000
+  access-key: minioadmin
+  secret-key: minioadmin123
+  bucket-name: herman
+  secure: false
